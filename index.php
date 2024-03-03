@@ -106,6 +106,47 @@
 // var_dump(mergeAlternately("qweraaa", "qwer"));
 
 
+// 9. Palindrome Number
+// function isPalindrome($x) {
+//         $rev = (int)(strrev((string)$x));   
+//         return $rev == $x ? true : false;
+// }
+// var_dump(isPalindrome(-121));
+
+
+// 13. Roman to Integer
+// function romanToInt($s)
+// {
+//     $roman_int = array(
+//         "I" => 1,
+//         "V" => 5,
+//         "X" => 10,
+//         "L" => 50,
+//         "C" => 100,
+//         "D" => 500,
+//         "M" => 1000
+//     );
+//     $result = 0;
+//     $inp_arr = str_split($s);
+
+//     for ($i = 0; $i < count($inp_arr); $i++) {
+//         if ($roman_int[$inp_arr[$i]] >= $roman_int[$inp_arr[$i + 1]]) {
+//             $result += $roman_int[$inp_arr[$i]];
+//         } else {
+//             $result += $roman_int[$inp_arr[$i + 1]] - $roman_int[$inp_arr[$i]];
+//             $i++;
+//         }
+//     }
+
+//     return $result;
+// }
+// var_dump(romanToInt("MCMXCIV"));
+
+
+
+
+
+
 
 
 
@@ -129,4 +170,3 @@
 // }
 
 // var_dump(maxProfit([7, 8, 5, 3, 6, 4]));
-
