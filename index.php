@@ -187,8 +187,8 @@
 //         if ($brackets[$value]) {
 //             array_push($resultArr, $brackets[$value]);
 //         } else {
-//             $lastItem = array_pop($resultArr);
-//             if ($lastItem !== $value) {
+//             $item = array_pop($resultArr);
+//             if ($item !== $value) {
 //                 return false;
 //             }
 //         }
@@ -267,7 +267,6 @@ function mergeTwoLists($list1, $list2) {}
 // var_dump(searchInsert([2,3,5,6,9], 7));
 
 
-
 // function lengthOfLastWord($s)
 // {
 //     $s = trim($s);
@@ -277,3 +276,35 @@ function mergeTwoLists($list1, $list2) {}
 //     return strlen(array_pop($arrayWords));
 // }
 // var_dump(lengthOfLastWord("   fly me   to   the moon  "));
+
+
+// function plusOne($digits)
+// {
+//     $index = count($digits)-1;
+
+//     if ($digits[$index] < 9) {
+//         $digits[$index] += 1;
+//         return $digits;
+//     } else {
+//         for ($i = $index; $i >= 0; $i--) {
+//             if ($digits[$i - 1] < 9 && $i === 0) {
+//                 $digits[$i] = 0;
+//                 array_unshift($digits, 1);
+//                 return $digits;
+//             }
+//             if ($digits[$i - 1] < 9) {
+//                 $digits[$i] = 0;
+//                 $digits[$i - 1] += 1;
+//                 return $digits;
+//             } else {
+//                 $digits[$i] = 0;
+//             }
+//         }
+//     }
+// }
+// var_dump(plusOne([9, 9, 9, 9, 9]));
+
+// function addBinary($a, $b) {
+    
+// }
+// var_dump(addBinary("11", "1"));
