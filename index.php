@@ -143,30 +143,137 @@
 // var_dump(romanToInt("MCMXCIV"));
 
 
+// function longestCommonPrefix($strs)
+// {
+//     if (count($strs) <= 1) {
+//         return $strs[0];
+//     }
+
+//     sort($strs);
+//     $min = array_shift($strs);
+//     $index = 0;
+//     $arr_num = 0;
+
+//     while ($index < strlen($min)) {
+//         if ($arr_num === count($strs)) {
+//             $index++;
+//             $arr_num = 0;
+//         }
+
+//         if ($index === strlen($min) || $min[$index] !== $strs[$arr_num][$index]) {
+//             break;
+//         }
+
+//         $arr_num++;
+//     }
+
+//     return substr($min, 0, $index);
+// }
+// var_dump(longestCommonPrefix(["flower", "flower", "flower", "flower"]));
 
 
+// function isValid($s)
+// {
+//     $brackets = array(
+//         '(' => ')',
+//         '{' => '}',
+//         '[' => ']'
+//     );
 
+//     $inputArr = str_split($s);
+//     $resultArr = array();
 
+//     foreach ($inputArr as $key => $value) {
+//         if ($brackets[$value]) {
+//             array_push($resultArr, $brackets[$value]);
+//         } else {
+//             $lastItem = array_pop($resultArr);
+//             if ($lastItem !== $value) {
+//                 return false;
+//             }
+//         }
+//     }
 
+//     return empty($resultArr) ? true : false;
+// }
+// var_dump(isValid([](){}));
 
+function mergeTwoLists($list1, $list2) {}
 
-// Not worked
-// function maxProfit($prices)
-// {   
-//     $result = 0;
-//     $min = min($prices);
-//     $max = max($prices);
-//     $index_min = array_search($min, $prices);
-//     $index_max = array_search($max, $prices);
+// var_dump(mergeTwoLists());
 
-//     if ($index_min > $index_max && $max) {
-//         unset($prices[$index_max]);
-//         return maxProfit($prices);
-//     } else {
-//         $result = $max - $min;
+// function strStrFunc($haystack, $needle)
+// {
+//     $needleFirst = $needle[0];
+//     $needleLength = strlen($needle);
+//     $haystackLength = strlen($haystack);
+//     $result = -1;
+
+//     if ($needleLength > $haystackLength) {
+//         return -1;
+//     }
+
+//     if ($needleLength === $haystackLength && $haystack !== $needle) {
+//         return -1;
+//     }
+
+//     for ($i = 0; $i < $haystackLength; $i++) {
+//         if ($haystack[$i] === $needleFirst && $haystackLength - $i >= $needleLength && substr($haystack, $i, $needleLength) === $needle) {
+//             return $i;
+//         }
 //     }
 
 //     return $result;
 // }
+// var_dump(strStrFunc("leetcode", "leeto"));
 
-// var_dump(maxProfit([7, 8, 5, 3, 6, 4]));
+
+// function searchInsert($nums, $target)
+// {
+//     $originalNums = [...$nums];
+//     $index = array_search($target, $nums);
+//     $lengthNums = count($nums);
+
+//     if ($index === 0 && $lengthNums === 1) {
+//         return 0;
+//     }
+
+//     if ($index) {
+//         return $index;
+//     }
+
+//     if ($nums[0] >= $target) {
+//         return 0;
+//     }
+
+//     if ($nums[$lengthNums - 1] <= $target) {
+//         return $lengthNums;
+//     }
+
+//     while ($lengthNums>1) {
+//         if ($nums[ceil($lengthNums / 2) - 1] < $target && $nums[ceil($lengthNums / 2)] > $target) {
+//             return array_search($nums[ceil($lengthNums / 2) - 1], $originalNums) + 1;
+//         }
+
+//         if ($nums[ceil($lengthNums / 2) - 1] > $target) {
+//             $nums = array_slice($nums, 0, ceil($lengthNums / 2));
+//             $lengthNums = ceil($lengthNums / 2);
+//         } else {
+//             $nums = array_slice($nums, ceil($lengthNums / 2));
+//             $lengthNums = ceil($lengthNums / 2);
+//         }
+//     }
+// }
+// var_dump(searchInsert([2,3,5,6,9], 7));
+
+
+
+// function lengthOfLastWord($s)
+// {
+//     $s = trim($s);
+
+//     $arrayWords = explode(' ', $s);
+
+//     return strlen(array_pop($arrayWords));
+// }
+// var_dump(lengthOfLastWord("   fly me   to   the moon  "));
